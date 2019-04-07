@@ -27,7 +27,7 @@ if __name__ == "__main__":
     api = twitter.Api(
         CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN_KEY, ACCESS_TOKEN_SECRET
     )
-    screen_name = 'arturoperezreverte' #Aqui va le nombre de la cuenta que queramos mirar (Arturo Perez Reverte) Si es None, devuelve los del usuario a los que este asociado la cuenta
+    screen_name = 'perezreverte' #Aqui va le nombre de la cuenta que queramos mirar (Arturo Perez Reverte) Si es None, devuelve los del usuario a los que este asociado la cuenta
     tweets = get_last_n_tweets(api=api, screen_name=screen_name, n_tweets=50)
 
     print([tweet for tweet in tweets])
