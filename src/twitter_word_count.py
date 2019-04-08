@@ -28,7 +28,7 @@ class twitter_word_count(object):
     def get_words_of_tweets(self, screen_name=None):
         tweets = self.get_last_n_tweets(screen_name)
         tweets = reduce((lambda x, y: x + ', ' + y), tweets)
-        return word_count(tweets, stopwords_language='spanish')
+        return word_count(tweets, stopwords_language='spanish')[0:20]
 
 
 if __name__ == "__main__":
