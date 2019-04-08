@@ -1,9 +1,9 @@
 # get_last_50_tweets
 Repositorio para la práctica 3 de la asignatura de <b>verificación y desarrollo de programas</b>.
 ## Autores
-<a href="https://github.com/juanDeVicente">Juan de Vicente</a>
-<a href="https://github.com/JaimeEscribano">Jaime Escribano</a>
-<a href="https://github.com/PaulaPascual">Paula Pascual</a>
+<a href="https://github.com/juanDeVicente">Juan de Vicente</a><br>
+<a href="https://github.com/JaimeEscribano">Jaime Escribano</a><br>
+<a href="https://github.com/PaulaPascual">Paula Pascual</a><br>
 <a href="https://github.com/ClaudiaRodriguezM">Claudia Rodríguez</a>
 ## Instrucciones de instalación
 1. Clonar el repositorio git.
