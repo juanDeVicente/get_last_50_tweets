@@ -1,5 +1,10 @@
 # get_last_50_tweets
 Repositorio para la práctica 3 de la asignatura de <b>verificación y desarrollo de programas</b>.
+## Autores
+<a href="https://github.com/juanDeVicente">Juan de Vicente</a>
+<a href="https://github.com/JaimeEscribano">Jaime Escribano</a>
+<a href="https://github.com/PaulaPascual">Paula Pascual</a>
+<a href="https://github.com/ClaudiaRodriguezM">Claudia Rodríguez</a>
 ## Instrucciones de instalación
 1. Clonar el repositorio git.
 2. Instalar las librerias listadas en <a href="https://github.com/juanDeVicente/get_last_50_tweets/blob/master/requirements.txt">requirements.txt</a>
@@ -28,13 +33,13 @@ Repositorio para la práctica 3 de la asignatura de <b>verificación y desarroll
     ```
     <rutapython> <rutaproyecto> Python -m pytest tests/ -v
     ```
-3. Ejecutar el siguiente comando para ejecutar los tests de "twitter_word_count.py"
+3. Ejecutar el siguiente comando para ejecutar los tests de "twitter_word_count.py":
     ```
     <rutapython> <rutaproyecto> -m pytest tests/twitter_word_count_test.py -v
     ```
 ## Instrucciones para ejecutar las pruebas
 1. Abrir la terminal
-2. Ejecutar el siguiente comando para ejecutar la prueba de twitter_word_count_test.py
+2. Ejecutar el siguiente comando para ejecutar la prueba de "twitter_word_count_test.py":
     ```
     <rutapython> <rutaproyecto>/twitter_word_count.py
     ```
