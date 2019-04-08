@@ -33,3 +33,4 @@ def test_none_tweets():
     twc.get_last_n_tweets = MagicMock(return_value=tweets)
     with pytest.raises(TypeError):
         twc.get_words_of_tweets()
+
