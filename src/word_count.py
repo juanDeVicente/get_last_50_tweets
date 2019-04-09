@@ -34,11 +34,9 @@ def word_count(text, stopwords_language='english'):
     if words == '':
         return []
 
-
     words = words.split(' ')  # Separamos por palabras
 
     words = [word.lower() for word in words if word.lower() not in stopwords.words(stopwords_language)]
-
 
     words_count = {}
 
