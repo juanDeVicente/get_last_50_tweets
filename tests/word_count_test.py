@@ -232,3 +232,14 @@ def test_wikipedia_definition_text_french():
                                                                                                              'structures',
                                                                                                              1)
                                                                                                          ]
+
+
+def test_punctuation_signs():
+    assert word_count('¿¿¿¿????? ¡¡¡¡ ???? !!!!! ... ,,,,') == []
+
+
+def test_empty_list():
+    '''
+    Encontrado el fallo por el usuario de github https://github.com/enriquesanchezb
+    '''
+    assert word_count('') == []
