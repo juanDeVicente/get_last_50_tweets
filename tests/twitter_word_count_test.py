@@ -12,7 +12,6 @@ def test_example():
     twc.get_last_n_tweets = MagicMock(return_value=tweets)
     assert twc.get_words_of_tweets() == [('hola', 1), ('tal', 1), ('pues', 1), ('bien', 1)]
 
-
 def test_quijote():
     tweets = ['En un lugar de la Mancha, de cuyo nombre no quiero acordarme,',
               'o ha mucho tiempo que vivía un hidalgo de los de lanza en astillero,', 'adarga antigua, rocín flaco',
@@ -26,10 +25,27 @@ def test_quijote():
                                          ('lanza', 1), ('astillero', 1), ('adarga', 1), ('antigua', 1), ('rocín', 1),
                                          ('flaco', 1), ('galgo', 1), ('corredor', 1), ('olla', 1), ('vaca', 1)]
 
-
 def test_none_tweets():
     tweets = []
     twc = twitter_word_count(None)
     twc.get_last_n_tweets = MagicMock(return_value=tweets)
     with pytest.raises(TypeError):
         twc.get_words_of_tweets()
+
+def test_boolean():
+    twc = twitter_word_count(None)
+    twc.get_last_n_tweets = MagicMock(return_value=True)
+    with pytest.raises(TypeError):
+        twc.get_words_of_tweets()
+
+def test_stop_words_tweet():
+    tweets = ['ella el', 'nosotros y ellos', 'un una', 'unos', 'yo', 'tu tu', 'que', 'estas']
+    twc = twitter_word_count(None)
+    twc.get_last_n_tweets = MagicMock(return_value=tweets)
+    assert twc.get_words_of_tweets() == []
+
+def test_puntuation_marks():
+    tweets = [',,,,', '....', '???', '!!!!', '¡¡¡¡¡', ';;;;', '::::::']
+    twc = twitter_word_count(None)
+    twc.get_last_n_tweets = MagicMock(return_value=tweets)
+    assert twc.get_words_of_tweets() == [('', 7)]

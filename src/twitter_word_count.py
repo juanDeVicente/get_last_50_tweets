@@ -23,7 +23,9 @@ class twitter_word_count(object):
         self.api = api
 
     def get_last_n_tweets(self, screen_name=None):
-        return [tweet.text for tweet in self.api.GetUserTimeline(screen_name=screen_name, count=200, include_rts=False, exclude_replies=True)[0:50]]
+        return [tweet.text for tweet in
+                self.api.GetUserTimeline(screen_name=screen_name, count=200, include_rts=False, exclude_replies=True)[
+                0:50]]
 
     def get_words_of_tweets(self, screen_name=None):
         tweets = self.get_last_n_tweets(screen_name)
