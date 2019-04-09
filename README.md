@@ -3,7 +3,7 @@ Repositorio para la práctica 3 de la asignatura de <b>verificación y desarroll
 ## Autores
 <a href="https://github.com/juanDeVicente">Juan de Vicente</a><br>
 <a href="https://github.com/JaimeEscribano">Jaime Escribano</a><br>
-<a href="https://github.com/Ayato27">Raúl Matrinez</a><br>
+<a href="https://github.com/Ayato27">Raúl Martínez</a><br>
 <a href="https://github.com/PaulaPascual">Paula Pascual</a><br>
 <a href="https://github.com/ClaudiaRodriguezM">Claudia Rodríguez</a>
 ## Instrucciones de instalación
