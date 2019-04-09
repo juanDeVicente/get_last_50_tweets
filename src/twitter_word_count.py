@@ -23,7 +23,9 @@ class twitter_word_count(object):
         self.api = api
 
     def get_last_n_tweets(self, screen_name=None):
-        return [tweet.text for tweet in self.api.GetUserTimeline(screen_name=screen_name, count=200, include_rts=False, exclude_replies=True)[0:50]]
+        return [tweet.text for tweet in
+                self.api.GetUserTimeline(screen_name=screen_name, count=200, include_rts=False, exclude_replies=True)[
+                0:50]]
 
     def get_words_of_tweets(self, screen_name=None):
         tweets = self.get_last_n_tweets(screen_name)
@@ -49,7 +51,7 @@ if __name__ == "__main__":
     api = twitter.Api(
         CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN_KEY, ACCESS_TOKEN_SECRET
     )
-    screen_name = '_lalusi'  # Aqui va le nombre de la cuenta que queramos mirar (Arturo Perez Reverte) Si es None, devuelve los del usuario a los que este asociado la cuenta
+    screen_name = 'perezreverte'  # Aqui va le nombre de la cuenta que queramos mirar (Arturo Perez Reverte) Si es None, devuelve los del usuario a los que este asociado la cuenta
     twc = twitter_word_count(api)
 
     print(twc.get_words_of_tweets(screen_name))

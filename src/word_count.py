@@ -24,14 +24,21 @@ def word_count(text, stopwords_language='english'):
     if text == '':
         return []
 
+    text = text.strip()
     text = ' '.join(text.split())  # Quitamos todos los espacios extra entre palabras
     words = text.replace(",", "").replace(".", "").replace(":", "").replace(";", "").replace("?", "").replace("!", "") \
         .replace("¿", "").replace("¡", "")
     # Los apostrofes son un problema, asi que hay que cambiar los signos de puntuacion a mano
+    words = words.strip()
+
+    if words == '':
+        return []
+
 
     words = words.split(' ')  # Separamos por palabras
 
     words = [word.lower() for word in words if word.lower() not in stopwords.words(stopwords_language)]
+
 
     words_count = {}
 
@@ -39,6 +46,8 @@ def word_count(text, stopwords_language='english'):
         words_count[key] = words_count.get(key, 0) + 1
         # get funciona tal que si existe la clave devuelve el valor, si no devuelve el segundo parametro
 
+    if len(words_count) == 0:
+        return []
     return sorted(words_count.items(), key=lambda x: x[1], reverse=True)  # Ordenamos las palabras segun lo pedido
 
 
@@ -56,4 +65,4 @@ def run():
 
 
 if __name__ == "__main__":
-    run()
+    word_count('¿¿¿¿????? ¡¡¡¡ ???? !!!!! ... ,,,,')

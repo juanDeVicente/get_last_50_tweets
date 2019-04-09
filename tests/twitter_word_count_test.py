@@ -34,3 +34,24 @@ def test_none_tweets():
     with pytest.raises(TypeError):
         twc.get_words_of_tweets()
 
+
+def test_boolean():
+    twc = twitter_word_count(None)
+    twc.get_last_n_tweets = MagicMock(return_value=True)
+    with pytest.raises(TypeError):
+        twc.get_words_of_tweets()
+
+
+def test_stop_words_tweet():
+    tweets = ['ella el', 'nosotros y ellos', 'un una', 'unos', 'yo', 'tu tu', 'que', 'estas']
+    twc = twitter_word_count(None)
+    twc.get_last_n_tweets = MagicMock(return_value=tweets)
+    assert twc.get_words_of_tweets() == []
+
+
+def test_puntuation_marks():
+    tweets = [',,,,', '....', '???', '!!!!', '¡¡¡¡¡', ';;;;', '::::::']
+    twc = twitter_word_count(None)
+    twc.get_last_n_tweets = MagicMock(return_value=tweets)
+    assert twc.get_words_of_tweets() == []
+
