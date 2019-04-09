@@ -54,3 +54,4 @@ def test_puntuation_marks():
     twc = twitter_word_count(None)
     twc.get_last_n_tweets = MagicMock(return_value=tweets)
     assert twc.get_words_of_tweets() == []
+
