@@ -3,6 +3,9 @@
 
 import pytest
 from unittest.mock import MagicMock
+
+import requests
+
 from src.twitter_word_count import twitter_word_count
 
 
@@ -55,3 +58,10 @@ def test_puntuation_marks():
     twc.get_last_n_tweets = MagicMock(return_value=tweets)
     assert twc.get_words_of_tweets() == []
 
+
+def test_no_internet():
+    twc = twitter_word_count(None)
+    twc.get_last_n_tweets = MagicMock(
+        side_effect=requests.exceptions.ConnectionError)  # Simulamos que no hay conexión a internet
+    with pytest.raises(ValueError):
+        twc.get_words_of_tweets()
