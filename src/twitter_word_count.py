@@ -4,6 +4,7 @@
 """
 Clase que permite contar las palabras de los útlimos tweets
 """
+import requests
 
 from src.word_count import word_count
 from functools import reduce
@@ -28,7 +29,11 @@ class twitter_word_count(object):
                 0:50]]
 
     def get_words_of_tweets(self, screen_name=None):
-        tweets = self.get_last_n_tweets(screen_name)
+        try:
+            tweets = self.get_last_n_tweets(screen_name)
+        except requests.exceptions.ConnectionError:
+            raise ValueError('No hay conexion a Internet')
+
         tweets = reduce((lambda x, y: x + ', ' + y), tweets)
         return word_count(tweets, stopwords_language='spanish')[0:20]
 
