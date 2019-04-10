@@ -23,10 +23,10 @@ Repositorio para la práctica 3 de la asignatura de <b>verificación y desarroll
     Abrir una consola de Python y ejecutar los siguientes comandos:
     ```python
     >>> import os
-    >>> os.environ['ACCESS_TOKEN_KEY'] = 'ACCESS_TOKEN_KEY'
-    >>> os.environ['ACCESS_TOKEN_SECRET'] = 'ACCESS_TOKEN_SECRET'
-    >>> os.environ['CONSUMER_KEY'] = 'CONSUMER_KEY'
-    >>> os.environ['CONSUMER_SECRET'] = 'CONSUMER_SECRET'
+    >>> os.environ['ACCESS_TOKEN_KEY'] = <accesstokenkey> 
+    >>> os.environ['ACCESS_TOKEN_SECRET'] = <accesstokensecret> 
+    >>> os.environ['CONSUMER_KEY'] = <consumerkey>
+    >>> os.environ['CONSUMER_SECRET'] = <consumersecret>
     ```
 ## Instrucciones para ejecutar los tests
 1. Abrir la terminal
